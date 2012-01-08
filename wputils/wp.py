@@ -5,12 +5,12 @@ from optparse import OptionParser
 from config import load_config
 
 def init_wp( config, args ):
-	print 'wallpaper directory: ', config.get( 'wp', 'wp_dir' )
-	print 'Database uri: ', config.get( 'wp', 'wpdb_uri' )
+	print 'wallpaper directory: ', config.get( 'wp', 'dirs' )
+	print 'Database uri: ', config.get( 'wp', 'db_uri' )
 	print 'Database last updated (str): ', config.get( 
-			'wp', 'wpdb_last_updated' )
+			'wp', 'db_last_updated' )
 	print 'Database last updated (tuple): ', config.get_datetime( 
-			'wp', 'wpdb_last_updated' )
+			'wp', 'db_last_updated' )
 
 def import_wp( config, args ):
 	print 'import'

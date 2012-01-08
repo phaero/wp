@@ -24,10 +24,10 @@ def load_config():
 
 def _setup_defaults( config ):
 	config.add_section( 'wp' )
-	config.set( 'wp', 'wp_dir', os.path.expanduser( '~/.wallpapers/' ) )
-	config.set( 'wp', 'wpdb_uri', 
+	config.set( 'wp', 'dirs', os.path.expanduser( '~/.wallpapers/' ) )
+	config.set( 'wp', 'db_uri',
 			'sqlite:%s' % os.path.join( basedir.xdg_data_home, 'wp.db' ) )
-	config.set( 'wp', 'wpdb_last_updated', datetime.now().replace( 
+	config.set( 'wp', 'db_last_updated', datetime.now().replace(
 		microsecond = 0 ).isoformat() )
 
 def parse_iso8601_date(s):
