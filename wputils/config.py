@@ -25,8 +25,7 @@ def load_config():
 def _setup_defaults( config ):
 	config.add_section( 'wp' )
 	config.set( 'wp', 'dirs', os.path.expanduser( '~/.wallpapers/' ) )
-	config.set( 'wp', 'db_uri',
-			'sqlite:%s' % os.path.join( basedir.xdg_data_home, 'wp.db' ) )
+	config.set( 'wp', 'db_uri', os.path.join( basedir.xdg_data_home, 'wp.db' ) )
 	config.set( 'wp', 'db_last_updated', datetime.now().replace(
 		microsecond = 0 ).isoformat() )
 
