@@ -4,6 +4,8 @@ import logging
 from optparse import OptionParser
 from config import load_config
 
+import wputils.db as db
+
 def init_wp( config, args ):
 	print 'wallpaper directory: ', config.get( 'wp', 'dirs' )
 	print 'Database uri: ', config.get( 'wp', 'db_uri' )
@@ -11,6 +13,8 @@ def init_wp( config, args ):
 			'wp', 'db_last_updated' )
 	print 'Database last updated (tuple): ', config.get_datetime( 
 			'wp', 'db_last_updated' )
+
+	db.create_db( config )
 
 def import_wp( config, args ):
 	print 'import'
